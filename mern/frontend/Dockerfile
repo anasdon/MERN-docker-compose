@@ -2,7 +2,7 @@
 # Description: Dockerfile for the client side of the MERN stack application
 
 # Use the official image as a parent image
-FROM node:18.9.1
+FROM node:20.5.0-alpine
 
 # Set the working directory
 WORKDIR /app
@@ -11,7 +11,7 @@ WORKDIR /app
 COPY package.json .
 
 # Run the command inside your image filesystem
-RUN npm install
+RUN npm install -g npm@10.8.3
 
 # Inform Docker that the container is listening on the specified port at runtime
 EXPOSE 5173
