@@ -7,5 +7,12 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Client Tests') {
+    	    steps {
+        	dir('mern/fromtend') {
+            	    sh 'npm install'
+        	}
+    	    }
+        }
     }
 }
